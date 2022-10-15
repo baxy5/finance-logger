@@ -21,10 +21,18 @@ form.addEventListener('submit', (e) => {
 });
 // classes
 class Invoice {
-    constructor(c, d, a) {
+    /* readonly client: string;
+    private details: string;
+    public amount: number; */
+    /* constructor(c: string, d: string, a: number) {
         this.client = c;
         this.details = d;
         this.amount = a;
+    } */
+    constructor(client, details, amount) {
+        this.client = client;
+        this.details = details;
+        this.amount = amount;
     }
     format() {
         return `${this.client} owes ${this.amount} for ${this.details}`;
@@ -35,7 +43,8 @@ const invTwo = new Invoice("Adaptics", "work on Szalai", 2000000);
 let invoices = [];
 invoices.push(invOne);
 invoices.push(invTwo);
-console.log(invoices);
-invOne.client = "Jani";
-invTwo.amount = 3000;
-console.log(invOne, invTwo);
+// console.log(invoices)
+// console.log(invOne, invTwo)
+invoices.forEach(inv => {
+    console.log(inv.client, inv.amount, inv.format());
+});
