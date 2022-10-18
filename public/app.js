@@ -1,4 +1,3 @@
-"use strict";
 /* // const anchor = document.querySelector("a")
 const anchor = document.querySelector("a")! // => if you certainly know that there is an anchor
 
@@ -20,31 +19,14 @@ form.addEventListener('submit', (e) => {
     console.log(type.value, toform.value, details.value, amount.valueAsNumber);
 });
 // classes
-class Invoice {
-    /* readonly client: string;
-    private details: string;
-    public amount: number; */
-    /* constructor(c: string, d: string, a: number) {
-        this.client = c;
-        this.details = d;
-        this.amount = a;
-    } */
-    constructor(client, details, amount) {
-        this.client = client;
-        this.details = details;
-        this.amount = amount;
-    }
-    format() {
-        return `${this.client} owes ${this.amount} for ${this.details}`;
-    }
-}
+import { Invoice } from "./classes/invoice.js";
 const invOne = new Invoice("Adaptics", "work on Eniranyitok", 1000000);
 const invTwo = new Invoice("Adaptics", "work on Szalai", 2000000);
 let invoices = [];
 invoices.push(invOne);
 invoices.push(invTwo);
-// console.log(invoices)
-// console.log(invOne, invTwo)
+console.log(invoices);
+console.log(invOne, invTwo);
 invoices.forEach(inv => {
     console.log(inv.client, inv.amount, inv.format());
 });
