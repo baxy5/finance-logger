@@ -31,6 +31,25 @@ form.addEventListener('submit', (e: Event) => {
 // classes
 import { Invoice } from "./classes/invoice.js"
 
+// intefaces
+interface isPerson {
+    name: string;
+    age: number;
+    speak(a: string): void;
+}
+
+const me: isPerson = {
+    name: "janos",
+    age: 17,
+    speak(text: string) {
+        console.log(text);
+    }
+}
+
+const greetPerson = (person: isPerson) => {
+    console.log(person.name);
+}
+
 const invOne = new Invoice("Adaptics", "work on Eniranyitok", 1000000);
 const invTwo = new Invoice("Adaptics", "work on Szalai", 2000000);
 
