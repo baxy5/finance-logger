@@ -1,7 +1,7 @@
-import { Invoice } from "./classes/invoice";
+/* import { Invoice } from "./classes/invoice";
 import { ListTemplate } from "./classes/ListTemplate";
 import { Payment } from "./classes/payment";
-import { HasFormatter } from "./interfaces/HasFormatter";
+import { HasFormatter } from "./interfaces/HasFormatter"; */
 
 /* // const anchor = document.querySelector("a")
 const anchor = document.querySelector("a")! // => if you certainly know that there is an anchor
@@ -13,16 +13,16 @@ console.log(anchor.href)
 } */
 
 // const form = document.querySelector("form")!
-const form = document.querySelector('.new-item-form') as HTMLFormElement;
-
+/* const form = document.querySelector('.new-item-form') as HTMLFormElement;
+ */
 // inputs
-const type = document.querySelector('#type') as HTMLInputElement;
+/* const type = document.querySelector('#type') as HTMLInputElement;
 const tofrom = document.querySelector('#tofrom') as HTMLInputElement;
 const details = document.querySelector('#details') as HTMLInputElement;
-const amount = document.querySelector('#amount') as HTMLInputElement;
+const amount = document.querySelector('#amount') as HTMLInputElement; */
 
 // list template instance
-const ul = document.querySelector("ul")!
+/* const ul = document.querySelector("ul")!
 const list = new ListTemplate(ul)
 
 form.addEventListener('submit', (e: Event) => {
@@ -37,7 +37,7 @@ form.addEventListener('submit', (e: Event) => {
 
 
     list.render(doc, type.value, 'end')
-});
+}); */
 
 // classes
 /* import { Invoice } from "./classes/invoice.js"
@@ -89,7 +89,29 @@ invoices.forEach(inv => {
 }) */
 
 
+interface Resource<T> {
+    uid: number,
+    resourceName: string,
+    data: T
+}
 
+let docThree: Resource<string> = {
+    uid: 1,
+    resourceName: "person",
+    data: "valami"
+}
+
+// GENERICS
+const addUID = <T extends { name: string }>(obj: T) => {
+    let uid = Math.floor(Math.random() * 100)
+    return { ...obj, uid }
+}
+
+let docOne = addUID({ name: "asd", age: 20 });
+// let docTwo = addUID("asd")
+
+
+console.log(docOne.uid)
 
 
 
