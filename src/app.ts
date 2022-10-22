@@ -117,6 +117,10 @@ let docThree: Resource<string> = {
     data: "valami"
 }
 
+// TUPLES
+
+let tup: [string, number, boolean] = ['asd', 25, true]
+
 
 
 
