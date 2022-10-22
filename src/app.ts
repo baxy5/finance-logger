@@ -89,17 +89,9 @@ invoices.forEach(inv => {
 }) */
 
 
-interface Resource<T> {
-    uid: number,
-    resourceName: string,
-    data: T
-}
+// ENUMS
+enum ResourceType { BOOK, AUTHOR, FILM, DIRECTOR, PERSON }
 
-let docThree: Resource<string> = {
-    uid: 1,
-    resourceName: "person",
-    data: "valami"
-}
 
 // GENERICS
 const addUID = <T extends { name: string }>(obj: T) => {
@@ -112,6 +104,18 @@ let docOne = addUID({ name: "asd", age: 20 });
 
 
 console.log(docOne.uid)
+
+interface Resource<T> {
+    uid: number,
+    resourceName: ResourceType,
+    data: T
+}
+
+let docThree: Resource<string> = {
+    uid: 1,
+    resourceName: ResourceType.AUTHOR,
+    data: "valami"
+}
 
 
 

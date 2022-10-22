@@ -82,10 +82,25 @@ console.log(invOne, invTwo)
 invoices.forEach(inv => {
     console.log(inv.client, inv.amount, inv.format())
 }) */
+// ENUMS
+var ResourceType;
+(function (ResourceType) {
+    ResourceType[ResourceType["BOOK"] = 0] = "BOOK";
+    ResourceType[ResourceType["AUTHOR"] = 1] = "AUTHOR";
+    ResourceType[ResourceType["FILM"] = 2] = "FILM";
+    ResourceType[ResourceType["DIRECTOR"] = 3] = "DIRECTOR";
+    ResourceType[ResourceType["PERSON"] = 4] = "PERSON";
+})(ResourceType || (ResourceType = {}));
 // GENERICS
 const addUID = (obj) => {
     let uid = Math.floor(Math.random() * 100);
     return Object.assign(Object.assign({}, obj), { uid });
 };
 let docOne = addUID({ name: "asd", age: 20 });
+// let docTwo = addUID("asd")
 console.log(docOne.uid);
+let docThree = {
+    uid: 1,
+    resourceName: ResourceType.AUTHOR,
+    data: "valami"
+};
